@@ -10,4 +10,11 @@ public class Arc {
     public String toString(){
         return noeud+"("+poids+") ";
     }
+
+    public double getPoids(){
+        return poids;
+    }
+    public String getNoeud(){
+        return noeud;
+    }
 }
