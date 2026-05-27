@@ -96,11 +96,11 @@ public class Valeurs {
     public List<String> calculerChemin(String destination){
         List<String> res = new ArrayList<>();
         String p=destination;
-        while(this.getValeur(p)!=0){
+        while(p!=null){
             res.add(p);
             p=this.getParent(p);
         }
-        res.reversed();
+        res=res.reversed();
         return res;
     }
 

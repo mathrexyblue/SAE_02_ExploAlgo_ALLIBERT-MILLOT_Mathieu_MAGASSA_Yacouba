@@ -1,8 +1,5 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+public class MainBellmanFord {
     public static void main(String[] args) {
-
         GrapheListe g=new GrapheListe();
         g.ajoutArc("A","B",12);
         g.ajoutArc("A","D",87);
@@ -12,9 +9,9 @@ public class Main {
         g.ajoutArc("D","C",10);
         g.ajoutArc("E","D",43);
 
-        System.out.println(g);
-
-
-
+        BellmanFord bf=new BellmanFord();
+        Valeurs v=bf.resoudre(g,"A");
+        System.out.println(v);
+        System.out.println(v.calculerChemin("C"));
     }
 }

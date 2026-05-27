@@ -16,7 +16,15 @@ public class GrapheListe implements Graphe{
     }
 
     public void ajoutArc(String source, String destination, double poids){
-        this.getAdjacents(source).ajout(new Arc(destination,poids));
+        if (!this.noeuds.contains(source)){
+            this.noeuds.add(source);
+            Arcs ar=new Arcs();
+            ar.ajout(new Arc(destination,poids));
+            this.arcs.add(ar);
+        }else{
+            this.getAdjacents(source).ajout(new Arc(destination,poids));
+        }
+
     }
 
     public String toString(){
@@ -26,6 +34,7 @@ public class GrapheListe implements Graphe{
             for (Arc arc:this.getAdjacents(this.noeuds.get(i)).getListe()){
                 rep+=arc;
             }
+            rep+="\n";
         }
         return rep;
     }
