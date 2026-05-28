@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainTransport {
 
@@ -15,8 +17,8 @@ public class MainTransport {
             String to    = args[1];
             try{
                 GrapheListe gliste = (GrapheListe) LireReseau.lire(
-                        "C:/Users/mathi/Documents/SAE_algo/SAE_02_ExploAlgo_ALLIBERT-MILLOT_Mathieu_MAGASSA_Yacouba/stan.nodes.txt",
-                        "C:/Users/mathi/Documents/SAE_algo/SAE_02_ExploAlgo_ALLIBERT-MILLOT_Mathieu_MAGASSA_Yacouba/stan.edges.txt"
+                        "C:/Users/mathi/Documents/SAE_algo/SAE_02_ExploAlgo_ALLIBERT-MILLOT_Mathieu_MAGASSA_Yacouba/SAE-2.02-GUI/stan.nodes.txt",
+                        "C:/Users/mathi/Documents/SAE_algo/SAE_02_ExploAlgo_ALLIBERT-MILLOT_Mathieu_MAGASSA_Yacouba/SAE-2.02-GUI/stan.edges.txt"
                 );
 
                 // démarrage chronomètre
@@ -42,7 +44,18 @@ public class MainTransport {
                 // affichage du temps calculé (dans la sortie d'erreurs)
                 System.err.println("Temps exécution pour Dijkstra: " + (endTime - startTime) + " ns");
 
-                System.out.println(v.calculerChemin(to));
+
+                List<String> machin=v.calculerChemin(to);
+                String rep="";
+                for (int i=0;i<machin.size();i++) {
+                    rep+=machin.get(i);
+                    if (i!=machin.size()-1){
+                        rep+=";";
+                    }
+
+                }
+
+                System.out.println(rep);
 
 
             } catch (IOException e) {
