@@ -13,4 +13,13 @@ public class Arcs {
         return this.arcs;
     }
 
+    public boolean contient(String noeud){
+        for (Arc arc:this.arcs){
+            if (arc.getNoeud().equals(noeud)){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
