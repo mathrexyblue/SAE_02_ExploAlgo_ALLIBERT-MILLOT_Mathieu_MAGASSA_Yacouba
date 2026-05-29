@@ -1,8 +1,17 @@
 import java.util.ArrayList;
-
+/**
+ * Implémentation de l'algorithme de Dijkstra permettant de calculer
+ * les plus courts chemins depuis un nœud source dans un graphe orienté pondéré.
+ */
 public class Dijkstra {
 
-
+    /**
+     * Applique l'algorithme de Dijkstra sur un graphe donné.
+     *
+     * @param g      graphe sur lequel effectuer le calcul
+     * @param depart nœud source à partir duquel calculer les distances
+     * @return un objet Valeurs
+     */
     public Valeurs resoudre(Graphe g, String depart){
         ArrayList<String> nonvisite=new ArrayList<>();
         Valeurs v=new Valeurs();
